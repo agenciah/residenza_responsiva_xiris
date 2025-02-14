@@ -1,42 +1,45 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App.css */
+
+.App {
   text-align: center;
+  background-color: #f0f2f5; /* Color de fondo suave */
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App-header {
+  background-color: white; /* Color de fondo del encabezado */
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-logo {
+  width: 50px; /* Ajusta el tamaño del logo según sea necesario */
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1 {
+  color: rgb(82, 82, 82);
+  font-size: 24px;
+  margin: 10px 0;
 }
 
-.card {
-  padding: 2em;
+p {
+  color: gray;
+  font-size: 16px;
 }
 
-.read-the-docs {
-  color: #888;
+.ant-form-item-label > label {
+  color: #1F4A6D; /* Usar un color más oscuro para las etiquetas del formulario */
+}
+
+.ant-btn-primary {
+  background-color: #38A9E1;
+  border-color: #38A9E1;
+}
+
+.ant-btn-primary:hover {
+  background-color: #1F4A6D;
+  border-color: #1F4A6D;
 }

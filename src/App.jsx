@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.js
+import 'antd/dist/reset.css'; // Estilos de Ant Design
+import NewResidentForm from './components/newResidentForm';
+import './App.css'; // Archivo CSS para el estilo personalizado
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div className="App">
+      <header className="App-header">
+        
+        <h1>Formato para nuevo Residente</h1> 
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Llena el siguiente formulario, al finalizar, presiona el botón &quot;Descargar documentos&quot;,<br /> 
+          obtendras el reglamento del condominio, el directorio de la administración y el formulario.<br />
+          El formulario, por favor mándalo a la administración del condominio.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      </header>
+      <NewResidentForm/>
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,28 @@
+/* styles.css */
+@media (max-width: 768px) {
+    .ant-form-item {
+      margin-bottom: 12px;
+    }
+  
+    .ant-form-item-label {
+      font-size: 14px;
+    }
+  
+    .ant-input, .ant-radio-group, .ant-checkbox-wrapper {
+      width: 100%;
+    }
+  
+    .ant-btn {
+      width: 100%;
+    }
+  
+    .sigCanvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+  
+    .ant-upload {
+      width: 100%;
+    }
+  }
+  
