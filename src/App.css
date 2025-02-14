@@ -3,15 +3,8 @@
 .App {
   text-align: center;
   background-color: #f0f2f5; /* Color de fondo suave */
-  padding: 20px;
+  padding: 10px;
   font-family: Arial, sans-serif;
-}
-
-.App-header {
-  background-color: white; /* Color de fondo del encabezado */
-  padding: 20px;
-  border-radius: 10px;
-  color: #fff;
 }
 
 .App-logo {
@@ -43,3 +36,38 @@ p {
   background-color: #1F4A6D;
   border-color: #1F4A6D;
 }
+
+.App-header {
+  background-color: white;
+  padding: 10px 10px 10px; /* Aumentamos el padding superior */
+  border-radius: 10px;
+  color: #333;
+  text-align: center;
+  position: relative; /* Asegura que el contenido no se superponga */
+}
+
+.logos-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 20px; /* Mayor separación con el título */
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.left-logo {
+  margin-left: 10px;
+}
+
+.right-logo {
+  margin-right: 10px;
+}
+
+h1 {
+  margin-top: 20px; /* Agregar espacio para evitar que se vea cortado */
+}
+

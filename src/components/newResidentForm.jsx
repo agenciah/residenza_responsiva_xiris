@@ -5,9 +5,9 @@ import { UploadOutlined } from '@ant-design/icons';
 import SignatureCanvas from 'react-signature-canvas';
 import jsPDF from 'jspdf';
 import CropImage from './crop/cropimage';
-import responsiva from '/home/alex1986/xiris_responsiva/src/assets/Formulario_aceptación_de_reglamento_y_directorio_xiris.jpg';
-import fakeReglamento from '/home/alex1986/xiris_responsiva/src/components/documents/REGLAMENTO DE USO DE LA ALBERCA.pdf';
-import fakeDirectorio from '/home/alex1986/xiris_responsiva/src/components/documents/contacto_administración.pdf';
+import responsiva from '../assets/Responsiva_nuevos_Residentes.jpg';
+import fakeReglamento from './documents/Reglamento Falso.pdf';
+import fakeDirectorio from './documents/Directorio Falso.pdf';
 import { saveAs } from 'file-saver';
 
 const NewResidentForm = () => {
@@ -38,39 +38,30 @@ const NewResidentForm = () => {
 
   const generatePDF = () => {
     const doc = new jsPDF('p', 'pt', 'a4');
-  
-    // Cargar la imagen de fondo (responsiva) en formato base64
-    const img = new Image();
-    img.src = responsiva;  // Asegúrate de que la ruta sea correcta
-  
-    img.onload = () => {
-      // Cuando la imagen esté cargada, añadirla al PDF
-      doc.addImage(img, 'JPEG', 0, 0, 595, 842);  // 595 y 842 son las dimensiones A4 en pt
-  
-      // Ahora agregar el texto encima de la imagen
-      const name = form.getFieldValue('fullName');
-      const houseNumber = form.getFieldValue('houseNumber');
-      doc.setFontSize(11);
-      doc.text(`${name}`, 130, 373);
-      doc.text(`${houseNumber}`, 150, 222);
-      doc.text(`${form.getFieldValue('phone')}`, 130, 390);
-      doc.text(`${form.getFieldValue('email')}`, 130, 407);
-      doc.text(`${form.getFieldValue('ownerOrTenant')}`, 430, 205);
-  
-      doc.text(`${name}`, 190, 520);
-  
-      if (signatureURL) {
-        doc.addImage(signatureURL, 'PNG', 190, 470, 160, 80);
-      }
-  
-      if (idImageURL) {
-        doc.addImage(idImageURL, 'PNG', 200, 600, 160, 120);
-      }
-  
-      doc.save('Formulario_Residente.pdf');
-    };
+
+    doc.addImage(responsiva, 'JPEG', 0, 0, 595, 842);
+
+    const name = form.getFieldValue('fullName');
+    const houseNumber = form.getFieldValue('houseNumber');
+    doc.setFontSize(11);
+    doc.text(`${name}`, 130, 378);
+    doc.text(`${houseNumber}`, 230, 200);
+    doc.text(`${form.getFieldValue('phone')}`, 130, 398);
+    doc.text(`${form.getFieldValue('email')}`, 130, 415);
+    doc.text(`${form.getFieldValue('ownerOrTenant')}`, 80, 200);
+
+    doc.text(`${name}`, 190, 520);
+
+    if (signatureURL) {
+      doc.addImage(signatureURL, 'PNG', 190, 470, 160, 80);
+    }
+
+    if (idImageURL) {
+      doc.addImage(idImageURL, 'PNG', 200, 600, 160, 120);
+    }
+
+    doc.save('Formulario_Residente.pdf');
   };
-  
 
   const handleFormSubmission = () => {
     generatePDF(); // Genera y descarga el PDF del formulario
