@@ -1,6 +1,6 @@
 import './styles.css';
 import { useRef, useState } from 'react';
-import { Form, Input, Button, Checkbox, Upload, message, Radio, Space } from 'antd';
+import { Form, Input, Button, Upload, message, Radio, Space } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import SignatureCanvas from 'react-signature-canvas';
 import jsPDF from 'jspdf';
@@ -9,6 +9,7 @@ import responsiva from '../assets/Responsiva_nuevos_Residentes.jpg';
 import fakeReglamento from './documents/Reglamento Falso.pdf';
 import fakeDirectorio from './documents/Directorio Falso.pdf';
 import { saveAs } from 'file-saver';
+import TermsCheckbox from './termsCheckbox';
 
 const NewResidentForm = () => {
   const [form] = Form.useForm();
@@ -153,10 +154,8 @@ const NewResidentForm = () => {
           name="acceptTerms"
           valuePropName="checked"
           rules={[{ required: true, message: 'Debes aceptar que has recibido el reglamento y el directorio' }]}
-        >
-          <Checkbox>
-            Acepto que he recibido el reglamento y el directorio de la administración
-          </Checkbox>
+          >
+          <TermsCheckbox />
         </Form.Item>
 
         <Form.Item label="Colocar Firma en el rectángulo del centro">
